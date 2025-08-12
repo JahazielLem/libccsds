@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# User editors
+.vscode
+.idea
+.DS_Store
