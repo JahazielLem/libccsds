@@ -1,0 +1,6 @@
+#ifndef LIBCCSDS_VERSION_H
+#define LIBCCSDS_VERSION_H
+
+#define LIBCCSDS_VERSION "@PROJECT_VERSION@"
+
+#endif

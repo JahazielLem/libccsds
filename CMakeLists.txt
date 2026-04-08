@@ -1,9 +1,28 @@
 cmake_minimum_required(VERSION 3.16)
 
+execute_process(
+    COMMAND git describe --tags --dirty --always
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_VERSION
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+string(REGEX REPLACE "^v" "" PROJECT_VERSION ${GIT_VERSION})
+
+if (NOT GIT_VERSION)
+    set(PROJECT_VERSION "0.0.1")
+endif()
+
 project(ccsds
-    VERSION 0.1.0
+    VERSION ${PROJECT_VERSION}
     DESCRIPTION "CCSDS Space Packet Protocol (SPP) Library"
     LANGUAGES C
+)
+
+configure_file(
+    ${CMAKE_SOURCE_DIR}/include/version.h.in
+    ${CMAKE_BINARY_DIR}/generated/version.h
+    @ONLY
 )
 
 option(CCSDS_BUILD_TESTS "Build tests" ON)
@@ -18,14 +37,15 @@ add_library(ccsds::ccsds ALIAS ccsds)
 
 target_include_directories(ccsds
     PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/generated>
+        $<INSTALL_INTERFACE:include>
 )
 
 target_compile_features(ccsds PUBLIC c_std_99)
 
 if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(ccsds PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(ccsds PRIVATE -Wall -Wextra -Werror -Wpedantic)
 elseif (MSVC)
     target_compile_options(ccsds PRIVATE /W4)
 endif()
