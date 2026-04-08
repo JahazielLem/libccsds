@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('spp_8h.html',''); initResizable(); });
 
 <p>Space Packet Protocol (SPP) core definitions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;spp_config.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="spp__config_8h_source.html">spp_config.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 </div>
 <p><a href="spp_8h_source.html">Go to the source code of this file.</a></p>
@@ -116,25 +116,20 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac124547fb059719522bacfbaaac84d95" id="r_ac124547fb059719522bacfbaaac84d95"><td class="memItemLeft" align="right" valign="top"><a id="ac124547fb059719522bacfbaaac84d95" name="ac124547fb059719522bacfbaaac84d95"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCSDS_SPP_VERSION</b>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ac124547fb059719522bacfbaaac84d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCSDS Space Packet Protocol version (3 bits). Always 0 for Version 1. <br /></td></tr>
+<tr class="memitem:ac124547fb059719522bacfbaaac84d95" id="r_ac124547fb059719522bacfbaaac84d95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#ac124547fb059719522bacfbaaac84d95">CCSDS_SPP_VERSION</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ac124547fb059719522bacfbaaac84d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCSDS Space Packet Protocol version (3 bits). Always 0 for Version 1.  <br /></td></tr>
 <tr class="separator:ac124547fb059719522bacfbaaac84d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71131115afbc9a839c81a3699dec9d60" id="r_a71131115afbc9a839c81a3699dec9d60"><td class="memItemLeft" align="right" valign="top"><a id="a71131115afbc9a839c81a3699dec9d60" name="a71131115afbc9a839c81a3699dec9d60"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPP_APID_IDLE</b>&#160;&#160;&#160;0x7FF</td></tr>
-<tr class="memdesc:a71131115afbc9a839c81a3699dec9d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">APID reserved for IDLE packets. <br /></td></tr>
+<tr class="memitem:a71131115afbc9a839c81a3699dec9d60" id="r_a71131115afbc9a839c81a3699dec9d60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a71131115afbc9a839c81a3699dec9d60">SPP_APID_IDLE</a>&#160;&#160;&#160;0x7FF</td></tr>
+<tr class="memdesc:a71131115afbc9a839c81a3699dec9d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">APID reserved for IDLE packets.  <br /></td></tr>
 <tr class="separator:a71131115afbc9a839c81a3699dec9d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f609c862652cca760eb07e60a423973" id="r_a7f609c862652cca760eb07e60a423973"><td class="memItemLeft" align="right" valign="top"><a id="a7f609c862652cca760eb07e60a423973" name="a7f609c862652cca760eb07e60a423973"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPP_PRIMARY_HEADER_LEN</b>&#160;&#160;&#160;(6)</td></tr>
-<tr class="memdesc:a7f609c862652cca760eb07e60a423973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed length of the CCSDS Primary Header in bytes. <br /></td></tr>
+<tr class="memitem:a7f609c862652cca760eb07e60a423973" id="r_a7f609c862652cca760eb07e60a423973"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a7f609c862652cca760eb07e60a423973">SPP_PRIMARY_HEADER_LEN</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:a7f609c862652cca760eb07e60a423973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed length of the CCSDS Primary Header in bytes.  <br /></td></tr>
 <tr class="separator:a7f609c862652cca760eb07e60a423973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adae2ba323ca5ffd055aa0fc495c403c3" id="r_adae2ba323ca5ffd055aa0fc495c403c3"><td class="memItemLeft" align="right" valign="top"><a id="adae2ba323ca5ffd055aa0fc495c403c3" name="adae2ba323ca5ffd055aa0fc495c403c3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPP_IDLE_BUFFER_LEN</b>&#160;&#160;&#160;(1)</td></tr>
-<tr class="memdesc:adae2ba323ca5ffd055aa0fc495c403c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default length for internal IDLE buffer. <br /></td></tr>
+<tr class="memitem:adae2ba323ca5ffd055aa0fc495c403c3" id="r_adae2ba323ca5ffd055aa0fc495c403c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#adae2ba323ca5ffd055aa0fc495c403c3">SPP_IDLE_BUFFER_LEN</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:adae2ba323ca5ffd055aa0fc495c403c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default length for internal IDLE buffer.  <br /></td></tr>
 <tr class="separator:adae2ba323ca5ffd055aa0fc495c403c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b856d91c2ea069d28dbaa9dcd37f42f" id="r_a2b856d91c2ea069d28dbaa9dcd37f42f"><td class="memItemLeft" align="right" valign="top"><a id="a2b856d91c2ea069d28dbaa9dcd37f42f" name="a2b856d91c2ea069d28dbaa9dcd37f42f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPP_IDLE_BUFFER_DATA</b>&#160;&#160;&#160;0x0</td></tr>
-<tr class="memdesc:a2b856d91c2ea069d28dbaa9dcd37f42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default data pattern for IDLE packets. <br /></td></tr>
+<tr class="memitem:a2b856d91c2ea069d28dbaa9dcd37f42f" id="r_a2b856d91c2ea069d28dbaa9dcd37f42f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a2b856d91c2ea069d28dbaa9dcd37f42f">SPP_IDLE_BUFFER_DATA</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="memdesc:a2b856d91c2ea069d28dbaa9dcd37f42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default data pattern for IDLE packets.  <br /></td></tr>
 <tr class="separator:a2b856d91c2ea069d28dbaa9dcd37f42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -162,9 +157,8 @@ Functions</h2></td></tr>
 <tr class="memitem:adad5c55eb3019e02567ffad0b74242a0" id="r_adad5c55eb3019e02567ffad0b74242a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#adad5c55eb3019e02567ffad0b74242a0">spp_tc_build_packet</a> (space_packet_t *space_packet, uint8_t flag, uint8_t sec_header, uint16_t sec_header_len, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
 <tr class="memdesc:adad5c55eb3019e02567ffad0b74242a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telecommand (TC) packet.  <br /></td></tr>
 <tr class="separator:adad5c55eb3019e02567ffad0b74242a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc39733b3e471127f527d1a30dd66e0" id="r_a5bc39733b3e471127f527d1a30dd66e0"><td class="memItemLeft" align="right" valign="top"><a id="a5bc39733b3e471127f527d1a30dd66e0" name="a5bc39733b3e471127f527d1a30dd66e0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_tm_build_packet</b> (space_packet_t *space_packet, uint8_t flag, uint8_t sec_header, uint16_t sec_header_len, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
-<tr class="memdesc:a5bc39733b3e471127f527d1a30dd66e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telemetry (TM) packet. <br /></td></tr>
+<tr class="memitem:a5bc39733b3e471127f527d1a30dd66e0" id="r_a5bc39733b3e471127f527d1a30dd66e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a5bc39733b3e471127f527d1a30dd66e0">spp_tm_build_packet</a> (space_packet_t *space_packet, uint8_t flag, uint8_t sec_header, uint16_t sec_header_len, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="memdesc:a5bc39733b3e471127f527d1a30dd66e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telemetry (TM) packet.  <br /></td></tr>
 <tr class="separator:a5bc39733b3e471127f527d1a30dd66e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba917ac28ddea33ae9ed181b3ea04f1f" id="r_aba917ac28ddea33ae9ed181b3ea04f1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#aba917ac28ddea33ae9ed181b3ea04f1f">spp_idle_build_packet</a> (space_packet_t *space_packet)</td></tr>
 <tr class="memdesc:aba917ac28ddea33ae9ed181b3ea04f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a standard CCSDS IDLE packet.  <br /></td></tr>
@@ -172,31 +166,23 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_tm_build_packet</b
 <tr class="memitem:a9bb068dea272bd70f2c4baf26c9bc03d" id="r_a9bb068dea272bd70f2c4baf26c9bc03d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a9bb068dea272bd70f2c4baf26c9bc03d">spp_unpack_packet</a> (space_packet_t *space_packet, const uint8_t *buffer, uint16_t buffer_len)</td></tr>
 <tr class="memdesc:a9bb068dea272bd70f2c4baf26c9bc03d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpacks a raw byte buffer into a space_packet_t structure.  <br /></td></tr>
 <tr class="separator:a9bb068dea272bd70f2c4baf26c9bc03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6066338ed8cc469e874f6a9b1644fa9" id="r_af6066338ed8cc469e874f6a9b1644fa9"><td class="memItemLeft" align="right" valign="top"><a id="af6066338ed8cc469e874f6a9b1644fa9" name="af6066338ed8cc469e874f6a9b1644fa9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_reassemble_segmented_packets</b> (space_packet_t **packets, uint16_t num_packets, uint8_t *output_buffer, uint16_t output_len)</td></tr>
-<tr class="memdesc:af6066338ed8cc469e874f6a9b1644fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reassembles segmented packets into a single contiguous buffer. <br /></td></tr>
+<tr class="memitem:af6066338ed8cc469e874f6a9b1644fa9" id="r_af6066338ed8cc469e874f6a9b1644fa9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#af6066338ed8cc469e874f6a9b1644fa9">spp_reassemble_segmented_packets</a> (space_packet_t **packets, uint16_t num_packets, uint8_t *output_buffer, uint16_t output_len)</td></tr>
+<tr class="memdesc:af6066338ed8cc469e874f6a9b1644fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reassembles segmented packets into a single contiguous buffer.  <br /></td></tr>
 <tr class="separator:af6066338ed8cc469e874f6a9b1644fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6132dfcc02be134d9f1fa928b96657c1" id="r_a6132dfcc02be134d9f1fa928b96657c1"><td class="memItemLeft" align="right" valign="top"><a id="a6132dfcc02be134d9f1fa928b96657c1" name="a6132dfcc02be134d9f1fa928b96657c1"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_version</b> (const space_packet_t *ptr_packet)</td></tr>
+<tr class="memitem:a6132dfcc02be134d9f1fa928b96657c1" id="r_a6132dfcc02be134d9f1fa928b96657c1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a6132dfcc02be134d9f1fa928b96657c1">spp_get_version</a> (const space_packet_t *ptr_packet)</td></tr>
 <tr class="separator:a6132dfcc02be134d9f1fa928b96657c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9991152d825de8fe7bf1d1d7ba5b30c" id="r_ab9991152d825de8fe7bf1d1d7ba5b30c"><td class="memItemLeft" align="right" valign="top"><a id="ab9991152d825de8fe7bf1d1d7ba5b30c" name="ab9991152d825de8fe7bf1d1d7ba5b30c"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_type</b> (const space_packet_t *ptr_packet)</td></tr>
+<tr class="memitem:ab9991152d825de8fe7bf1d1d7ba5b30c" id="r_ab9991152d825de8fe7bf1d1d7ba5b30c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#ab9991152d825de8fe7bf1d1d7ba5b30c">spp_get_type</a> (const space_packet_t *ptr_packet)</td></tr>
 <tr class="separator:ab9991152d825de8fe7bf1d1d7ba5b30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87812416fad612e7095e8f8610efd1f9" id="r_a87812416fad612e7095e8f8610efd1f9"><td class="memItemLeft" align="right" valign="top"><a id="a87812416fad612e7095e8f8610efd1f9" name="a87812416fad612e7095e8f8610efd1f9"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_secondary_header</b> (const space_packet_t *ptr_packet)</td></tr>
+<tr class="memitem:a87812416fad612e7095e8f8610efd1f9" id="r_a87812416fad612e7095e8f8610efd1f9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a87812416fad612e7095e8f8610efd1f9">spp_get_secondary_header</a> (const space_packet_t *ptr_packet)</td></tr>
 <tr class="separator:a87812416fad612e7095e8f8610efd1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49c776d2580a69b3d322eadad2ab300b" id="r_a49c776d2580a69b3d322eadad2ab300b"><td class="memItemLeft" align="right" valign="top"><a id="a49c776d2580a69b3d322eadad2ab300b" name="a49c776d2580a69b3d322eadad2ab300b"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_sequence_flags</b> (const space_packet_t *ptr_packet)</td></tr>
+<tr class="memitem:a49c776d2580a69b3d322eadad2ab300b" id="r_a49c776d2580a69b3d322eadad2ab300b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a49c776d2580a69b3d322eadad2ab300b">spp_get_sequence_flags</a> (const space_packet_t *ptr_packet)</td></tr>
 <tr class="separator:a49c776d2580a69b3d322eadad2ab300b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9e557649e04033760bd9f72fa2768d2" id="r_af9e557649e04033760bd9f72fa2768d2"><td class="memItemLeft" align="right" valign="top"><a id="af9e557649e04033760bd9f72fa2768d2" name="af9e557649e04033760bd9f72fa2768d2"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_sequence_count</b> (const space_packet_t *ptr_packet)</td></tr>
+<tr class="memitem:af9e557649e04033760bd9f72fa2768d2" id="r_af9e557649e04033760bd9f72fa2768d2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#af9e557649e04033760bd9f72fa2768d2">spp_get_sequence_count</a> (const space_packet_t *ptr_packet)</td></tr>
 <tr class="separator:af9e557649e04033760bd9f72fa2768d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2794b8194a4f5f7461dfbbb350c0f2f" id="r_ac2794b8194a4f5f7461dfbbb350c0f2f"><td class="memItemLeft" align="right" valign="top"><a id="ac2794b8194a4f5f7461dfbbb350c0f2f" name="ac2794b8194a4f5f7461dfbbb350c0f2f"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_apid</b> (const space_packet_t *ptr_packet)</td></tr>
+<tr class="memitem:ac2794b8194a4f5f7461dfbbb350c0f2f" id="r_ac2794b8194a4f5f7461dfbbb350c0f2f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#ac2794b8194a4f5f7461dfbbb350c0f2f">spp_get_apid</a> (const space_packet_t *ptr_packet)</td></tr>
 <tr class="separator:ac2794b8194a4f5f7461dfbbb350c0f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ed3a7b932f51f528976f8d930a080e4" id="r_a7ed3a7b932f51f528976f8d930a080e4"><td class="memItemLeft" align="right" valign="top"><a id="a7ed3a7b932f51f528976f8d930a080e4" name="a7ed3a7b932f51f528976f8d930a080e4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_secondary_header_data</b> (const space_packet_t *ptr_packet, uint8_t *sec_header, uint16_t sec_header_len)</td></tr>
-<tr class="memdesc:a7ed3a7b932f51f528976f8d930a080e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts secondary header data from a packet. <br /></td></tr>
+<tr class="memitem:a7ed3a7b932f51f528976f8d930a080e4" id="r_a7ed3a7b932f51f528976f8d930a080e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a7ed3a7b932f51f528976f8d930a080e4">spp_get_secondary_header_data</a> (const space_packet_t *ptr_packet, uint8_t *sec_header, uint16_t sec_header_len)</td></tr>
+<tr class="memdesc:a7ed3a7b932f51f528976f8d930a080e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts secondary header data from a packet.  <br /></td></tr>
 <tr class="separator:a7ed3a7b932f51f528976f8d930a080e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -208,7 +194,88 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_secondary_head
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Kevin Leon </dd></dl>
 </li>
 </ul>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac124547fb059719522bacfbaaac84d95" name="ac124547fb059719522bacfbaaac84d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac124547fb059719522bacfbaaac84d95">&#9670;&#160;</a></span>CCSDS_SPP_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCSDS_SPP_VERSION&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CCSDS Space Packet Protocol version (3 bits). Always 0 for Version 1. </p>
+
+</div>
+</div>
+<a id="a71131115afbc9a839c81a3699dec9d60" name="a71131115afbc9a839c81a3699dec9d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71131115afbc9a839c81a3699dec9d60">&#9670;&#160;</a></span>SPP_APID_IDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPP_APID_IDLE&#160;&#160;&#160;0x7FF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>APID reserved for IDLE packets. </p>
+
+</div>
+</div>
+<a id="a2b856d91c2ea069d28dbaa9dcd37f42f" name="a2b856d91c2ea069d28dbaa9dcd37f42f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b856d91c2ea069d28dbaa9dcd37f42f">&#9670;&#160;</a></span>SPP_IDLE_BUFFER_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPP_IDLE_BUFFER_DATA&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default data pattern for IDLE packets. </p>
+
+</div>
+</div>
+<a id="adae2ba323ca5ffd055aa0fc495c403c3" name="adae2ba323ca5ffd055aa0fc495c403c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae2ba323ca5ffd055aa0fc495c403c3">&#9670;&#160;</a></span>SPP_IDLE_BUFFER_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPP_IDLE_BUFFER_LEN&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default length for internal IDLE buffer. </p>
+
+</div>
+</div>
+<a id="a7f609c862652cca760eb07e60a423973" name="a7f609c862652cca760eb07e60a423973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f609c862652cca760eb07e60a423973">&#9670;&#160;</a></span>SPP_PRIMARY_HEADER_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPP_PRIMARY_HEADER_LEN&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fixed length of the CCSDS Primary Header in bytes. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a06fc87d81c62e9abb8790b6e5713c55b" name="a06fc87d81c62e9abb8790b6e5713c55b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06fc87d81c62e9abb8790b6e5713c55b">&#9670;&#160;</a></span>anonymous enum</h2>
 
@@ -274,6 +341,150 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_secondary_head
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ac2794b8194a4f5f7461dfbbb350c0f2f" name="ac2794b8194a4f5f7461dfbbb350c0f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2794b8194a4f5f7461dfbbb350c0f2f">&#9670;&#160;</a></span>spp_get_apid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t spp_get_apid </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87812416fad612e7095e8f8610efd1f9" name="a87812416fad612e7095e8f8610efd1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87812416fad612e7095e8f8610efd1f9">&#9670;&#160;</a></span>spp_get_secondary_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t spp_get_secondary_header </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ed3a7b932f51f528976f8d930a080e4" name="a7ed3a7b932f51f528976f8d930a080e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed3a7b932f51f528976f8d930a080e4">&#9670;&#160;</a></span>spp_get_secondary_header_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_get_secondary_header_data </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>sec_header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extracts secondary header data from a packet. </p>
+
+</div>
+</div>
+<a id="af9e557649e04033760bd9f72fa2768d2" name="af9e557649e04033760bd9f72fa2768d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e557649e04033760bd9f72fa2768d2">&#9670;&#160;</a></span>spp_get_sequence_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t spp_get_sequence_count </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49c776d2580a69b3d322eadad2ab300b" name="a49c776d2580a69b3d322eadad2ab300b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c776d2580a69b3d322eadad2ab300b">&#9670;&#160;</a></span>spp_get_sequence_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t spp_get_sequence_flags </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9991152d825de8fe7bf1d1d7ba5b30c" name="ab9991152d825de8fe7bf1d1d7ba5b30c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9991152d825de8fe7bf1d1d7ba5b30c">&#9670;&#160;</a></span>spp_get_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t spp_get_type </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6132dfcc02be134d9f1fa928b96657c1" name="a6132dfcc02be134d9f1fa928b96657c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6132dfcc02be134d9f1fa928b96657c1">&#9670;&#160;</a></span>spp_get_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t spp_get_version </td>
+          <td>(</td>
+          <td class="paramtype">const space_packet_t *&#160;</td>
+          <td class="paramname"><em>ptr_packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aba917ac28ddea33ae9ed181b3ea04f1f" name="aba917ac28ddea33ae9ed181b3ea04f1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba917ac28ddea33ae9ed181b3ea04f1f">&#9670;&#160;</a></span>spp_idle_build_packet()</h2>
 
@@ -292,6 +503,48 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_secondary_head
 
 <p>Builds a standard CCSDS IDLE packet. </p>
 <dl class="section return"><dt>Returns</dt><dd>SPP_ERROR_NONE on success. </dd></dl>
+
+</div>
+</div>
+<a id="af6066338ed8cc469e874f6a9b1644fa9" name="af6066338ed8cc469e874f6a9b1644fa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6066338ed8cc469e874f6a9b1644fa9">&#9670;&#160;</a></span>spp_reassemble_segmented_packets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_reassemble_segmented_packets </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t **&#160;</td>
+          <td class="paramname"><em>packets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>num_packets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>output_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reassembles segmented packets into a single contiguous buffer. </p>
 
 </div>
 </div>
@@ -368,6 +621,66 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>spp_get_secondary_head
 <dl class="section return"><dt>Returns</dt><dd>SPP_ERROR_NONE on success, or specific error code. </dd></dl>
 </li>
 </ul>
+
+</div>
+</div>
+<a id="a5bc39733b3e471127f527d1a30dd66e0" name="a5bc39733b3e471127f527d1a30dd66e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc39733b3e471127f527d1a30dd66e0">&#9670;&#160;</a></span>spp_tm_build_packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_tm_build_packet </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t *&#160;</td>
+          <td class="paramname"><em>space_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sec_header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ptr_apid_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a Telemetry (TM) packet. </p>
 
 </div>
 </div>

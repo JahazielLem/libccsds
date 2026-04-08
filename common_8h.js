@@ -1,5 +1,6 @@
 var common_8h =
 [
+    [ "HOST_TO_BE16", "common_8h.html#a86268cc8a8456ee6ba3eb68b39ad2008", null ],
     [ "SPP_ERROR_APID_OUT_OF_RANGE", "common_8h.html#ab3042207a3ab8ebc79e0e3ee13439395", null ],
     [ "SPP_ERROR_INVALID_APID", "common_8h.html#a57b3127714c8f0de6053e237b019805e", null ],
     [ "SPP_ERROR_INVALID_BUFFER", "common_8h.html#a416e91e968ed1ff15a4226317fd32b7f", null ],

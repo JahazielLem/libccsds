@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['data_0',['data',['../struct____attribute____.html#a36a7bd4833e6c87aa7b6322e68522896',1,'__attribute__']]],
-  ['directory_20structure_1',['Directory Structure',['../md_README.html#autotoc_md1',1,'']]]
+  ['data_0',['data',['../struct____attribute____.html#a36a7bd4833e6c87aa7b6322e68522896',1,'__attribute__']]]
 ];

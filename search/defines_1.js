@@ -1,18 +1,4 @@
 var searchData=
 [
-  ['spp_5fapid_5fidle_0',['SPP_APID_IDLE',['../spp_8h.html#a71131115afbc9a839c81a3699dec9d60',1,'spp.h']]],
-  ['spp_5ferror_5fapid_5fout_5fof_5frange_1',['SPP_ERROR_APID_OUT_OF_RANGE',['../common_8h.html#ab3042207a3ab8ebc79e0e3ee13439395',1,'common.h']]],
-  ['spp_5ferror_5finvalid_5fapid_2',['SPP_ERROR_INVALID_APID',['../common_8h.html#a57b3127714c8f0de6053e237b019805e',1,'common.h']]],
-  ['spp_5ferror_5finvalid_5fbuffer_3',['SPP_ERROR_INVALID_BUFFER',['../common_8h.html#a416e91e968ed1ff15a4226317fd32b7f',1,'common.h']]],
-  ['spp_5ferror_5fmalformed_5fsec_5fheader_4',['SPP_ERROR_MALFORMED_SEC_HEADER',['../common_8h.html#a276ee31d1da82e3eeaa633bdfcf1e76a',1,'common.h']]],
-  ['spp_5ferror_5fnone_5',['SPP_ERROR_NONE',['../common_8h.html#a72703965c7009dfb83182c5e137b9751',1,'common.h']]],
-  ['spp_5ferror_5fnull_5fcounter_6',['SPP_ERROR_NULL_COUNTER',['../common_8h.html#a889253231b96f8948585d1342e2d6a72',1,'common.h']]],
-  ['spp_5ferror_5fnull_5fspace_5fpacket_7',['SPP_ERROR_NULL_SPACE_PACKET',['../common_8h.html#ac2c00728c285aba452b6ef255cfa4a38',1,'common.h']]],
-  ['spp_5ferror_5fpacket_5flen_8',['SPP_ERROR_PACKET_LEN',['../common_8h.html#a60529462744cd0063ca887d5d24f3818',1,'common.h']]],
-  ['spp_5ferror_5fpayload_5flen_9',['SPP_ERROR_PAYLOAD_LEN',['../common_8h.html#ad63b8e351677404eeb573710c236fa51',1,'common.h']]],
-  ['spp_5ferror_5fpayload_5flen_5fout_5flimits_10',['SPP_ERROR_PAYLOAD_LEN_OUT_LIMITS',['../common_8h.html#ab90fdb95a0c65e582c4b62dd1bb3e924',1,'common.h']]],
-  ['spp_5ferror_5fversion_11',['SPP_ERROR_VERSION',['../common_8h.html#aa316c885a8e168f0bf76c4b84312a324',1,'common.h']]],
-  ['spp_5fidle_5fbuffer_5fdata_12',['SPP_IDLE_BUFFER_DATA',['../spp_8h.html#a2b856d91c2ea069d28dbaa9dcd37f42f',1,'spp.h']]],
-  ['spp_5fidle_5fbuffer_5flen_13',['SPP_IDLE_BUFFER_LEN',['../spp_8h.html#adae2ba323ca5ffd055aa0fc495c403c3',1,'spp.h']]],
-  ['spp_5fprimary_5fheader_5flen_14',['SPP_PRIMARY_HEADER_LEN',['../spp_8h.html#a7f609c862652cca760eb07e60a423973',1,'spp.h']]]
+  ['host_5fto_5fbe16_0',['HOST_TO_BE16',['../common_8h.html#a86268cc8a8456ee6ba3eb68b39ad2008',1,'common.h']]]
 ];
