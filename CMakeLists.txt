@@ -1,0 +1,63 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(ccsds
+    VERSION 0.1.0
+    DESCRIPTION "CCSDS Space Packet Protocol (SPP) Library"
+    LANGUAGES C
+)
+
+option(CCSDS_BUILD_TESTS "Build tests" ON)
+option(CCSDS_BUILD_EXAMPLES "Build examples" ON)
+option(CCSDS_INSTALL "Enable installation" ON)
+
+add_library(ccsds
+    src/spp/spp.c
+)
+
+add_library(ccsds::ccsds ALIAS ccsds)
+
+target_include_directories(ccsds
+    PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
+target_compile_features(ccsds PUBLIC c_std_99)
+
+if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(ccsds PRIVATE -Wall -Wextra -Wpedantic)
+elseif (MSVC)
+    target_compile_options(ccsds PRIVATE /W4)
+endif()
+
+if (CCSDS_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(test)
+endif()
+
+if (CCSDS_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
+
+if (CCSDS_INSTALL)
+
+    include(GNUInstallDirs)
+
+    install(TARGETS ccsds
+            EXPORT ccsdsTargets
+            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+
+    install(DIRECTORY include/
+            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    )
+
+    install(EXPORT ccsdsTargets
+            FILE ccsdsConfig.cmake
+            NAMESPACE ccsds::
+            DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/ccsds
+    )
+
+endif()
