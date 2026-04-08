@@ -1,18 +1,36 @@
 var indexSectionsWithContent =
 {
-  0: "dfglrs",
-  1: "l"
+  0: "_acdefghilrst",
+  1: "_s",
+  2: "cest",
+  3: "s",
+  4: "adhilst",
+  5: "s",
+  6: "cs",
+  7: "l"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "pages"
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "enumvalues",
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Pages"
+  1: "Classes",
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Enumerator",
+  6: "Macros",
+  7: "Pages"
 };
 

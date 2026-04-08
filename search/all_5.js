@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['started_0',['Getting Started',['../md_README.html#autotoc_md2',1,'']]],
-  ['structure_1',['Directory Structure',['../md_README.html#autotoc_md1',1,'']]]
+  ['features_0',['Features',['../md_README.html#autotoc_md0',1,'']]]
 ];

@@ -128,12 +128,17 @@ Getting Started</h1>
 <div class="fragment"><div class="line">ctest --output-on-failure</div>
 </div><!-- fragment --><p><b>Usage Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;ccsds/spp/spp.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line">spp_apid_context_t my_apid = { .apid = 0x123, .tc = 0, .tm = 0 };</div>
+<div class="line"><a class="code hl_struct" href="structspp__apid__context__t.html">spp_apid_context_t</a> my_apid = { .<a class="code hl_variable" href="structspp__apid__context__t.html#ac0ac01e216704b126bca4b56a2adeceb">apid</a> = 0x123, .tc = 0, .tm = 0 };</div>
 <div class="line">space_packet_t packet;</div>
 <div class="line">uint8_t data[] = { 0xDE, 0xAD, 0xBE, 0xEF };</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> result = spp_tm_build_packet(&amp;packet, SPP_GROUP_FLAG_UNSEGMENTED,</div>
-<div class="line">SPP_SECHEAD_FLAG_NOPRESENT, 0, data, <span class="keyword">sizeof</span>(data), &amp;my_apid);</div>
+<div class="line"><span class="keywordtype">int</span> result = <a class="code hl_function" href="spp_8h.html#a5bc39733b3e471127f527d1a30dd66e0">spp_tm_build_packet</a>(&amp;packet, <a class="code hl_enumvalue" href="spp_8h.html#a99fb83031ce9923c84392b4e92f956b5a4b265eb8de08e78d2e6943e574a164ac">SPP_GROUP_FLAG_UNSEGMENTED</a>,</div>
+<div class="line"><a class="code hl_enumvalue" href="spp_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a781a06e0ecc406d389ec6cc2321d9fa3">SPP_SECHEAD_FLAG_NOPRESENT</a>, 0, data, <span class="keyword">sizeof</span>(data), &amp;my_apid);</div>
+<div class="ttc" id="aspp_8h_html_a5bc39733b3e471127f527d1a30dd66e0"><div class="ttname"><a href="spp_8h.html#a5bc39733b3e471127f527d1a30dd66e0">spp_tm_build_packet</a></div><div class="ttdeci">int spp_tm_build_packet(space_packet_t *space_packet, uint8_t flag, uint8_t sec_header, uint16_t sec_header_len, const uint8_t *data, uint16_t data_len, spp_apid_context_t *ptr_apid_context)</div><div class="ttdoc">Constructs a Telemetry (TM) packet.</div><div class="ttdef"><b>Definition</b> spp.c:104</div></div>
+<div class="ttc" id="aspp_8h_html_a99fb83031ce9923c84392b4e92f956b5a4b265eb8de08e78d2e6943e574a164ac"><div class="ttname"><a href="spp_8h.html#a99fb83031ce9923c84392b4e92f956b5a4b265eb8de08e78d2e6943e574a164ac">SPP_GROUP_FLAG_UNSEGMENTED</a></div><div class="ttdeci">@ SPP_GROUP_FLAG_UNSEGMENTED</div><div class="ttdef"><b>Definition</b> spp.h:59</div></div>
+<div class="ttc" id="aspp_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a781a06e0ecc406d389ec6cc2321d9fa3"><div class="ttname"><a href="spp_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a781a06e0ecc406d389ec6cc2321d9fa3">SPP_SECHEAD_FLAG_NOPRESENT</a></div><div class="ttdeci">@ SPP_SECHEAD_FLAG_NOPRESENT</div><div class="ttdef"><b>Definition</b> spp.h:46</div></div>
+<div class="ttc" id="astructspp__apid__context__t_html"><div class="ttname"><a href="structspp__apid__context__t.html">spp_apid_context_t</a></div><div class="ttdoc">Context structure for managing APID-specific sequence counters.</div><div class="ttdef"><b>Definition</b> spp.h:66</div></div>
+<div class="ttc" id="astructspp__apid__context__t_html_ac0ac01e216704b126bca4b56a2adeceb"><div class="ttname"><a href="structspp__apid__context__t.html#ac0ac01e216704b126bca4b56a2adeceb">spp_apid_context_t::apid</a></div><div class="ttdeci">uint16_t apid</div><div class="ttdef"><b>Definition</b> spp.h:69</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Roadmap</h1>
 <ul>
