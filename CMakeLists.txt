@@ -16,7 +16,7 @@ if (NOT PROJECT_VERSION_CLEAN)
 endif()
 
 project(ccsds
-    VERSION ${PROJECT_VERSION}
+    VERSION ${PROJECT_VERSION_CLEAN}
     DESCRIPTION "CCSDS Space Packet Protocol (SPP) Library"
     LANGUAGES C
 )
