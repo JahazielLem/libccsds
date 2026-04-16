@@ -16,7 +16,9 @@ var spp_8h =
     [ "spp_get_version", "spp_8h.html#a6132dfcc02be134d9f1fa928b96657c1", null ],
     [ "spp_idle_build_packet", "spp_8h.html#aba917ac28ddea33ae9ed181b3ea04f1f", null ],
     [ "spp_reassemble_segmented_packets", "spp_8h.html#af6066338ed8cc469e874f6a9b1644fa9", null ],
-    [ "spp_tc_build_packet", "spp_8h.html#adad5c55eb3019e02567ffad0b74242a0", null ],
-    [ "spp_tm_build_packet", "spp_8h.html#a5bc39733b3e471127f527d1a30dd66e0", null ],
+    [ "spp_tc_build_packet", "spp_8h.html#add2288f7d5dc29738e7030a9ec714ce3", null ],
+    [ "spp_tc_build_packet_w_sec_hdr", "spp_8h.html#a87ed24cf9b8922ee60a65709c0cc9776", null ],
+    [ "spp_tm_build_packet", "spp_8h.html#ab4fd954d5cf325a6a16881d57ce3b500", null ],
+    [ "spp_tm_build_packet_w_sec_hdr", "spp_8h.html#acdbdbb254168180f19c0be87b1a534f4", null ],
     [ "spp_unpack_packet", "spp_8h.html#a9bb068dea272bd70f2c4baf26c9bc03d", null ]
 ];

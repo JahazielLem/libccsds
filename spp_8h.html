@@ -154,12 +154,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adad5c55eb3019e02567ffad0b74242a0" id="r_adad5c55eb3019e02567ffad0b74242a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#adad5c55eb3019e02567ffad0b74242a0">spp_tc_build_packet</a> (space_packet_t *space_packet, uint8_t flag, uint8_t sec_header, uint16_t sec_header_len, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
-<tr class="memdesc:adad5c55eb3019e02567ffad0b74242a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telecommand (TC) packet.  <br /></td></tr>
-<tr class="separator:adad5c55eb3019e02567ffad0b74242a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc39733b3e471127f527d1a30dd66e0" id="r_a5bc39733b3e471127f527d1a30dd66e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a5bc39733b3e471127f527d1a30dd66e0">spp_tm_build_packet</a> (space_packet_t *space_packet, uint8_t flag, uint8_t sec_header, uint16_t sec_header_len, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
-<tr class="memdesc:a5bc39733b3e471127f527d1a30dd66e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telemetry (TM) packet.  <br /></td></tr>
-<tr class="separator:a5bc39733b3e471127f527d1a30dd66e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2288f7d5dc29738e7030a9ec714ce3" id="r_add2288f7d5dc29738e7030a9ec714ce3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#add2288f7d5dc29738e7030a9ec714ce3">spp_tc_build_packet</a> (space_packet_t *space_packet, uint8_t seq_flag, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="memdesc:add2288f7d5dc29738e7030a9ec714ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telecommand (TC) packet.  <br /></td></tr>
+<tr class="separator:add2288f7d5dc29738e7030a9ec714ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4fd954d5cf325a6a16881d57ce3b500" id="r_ab4fd954d5cf325a6a16881d57ce3b500"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#ab4fd954d5cf325a6a16881d57ce3b500">spp_tm_build_packet</a> (space_packet_t *space_packet, uint8_t seq_flag, const uint8_t *data, uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="memdesc:ab4fd954d5cf325a6a16881d57ce3b500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telemetry (TM) packet.  <br /></td></tr>
+<tr class="separator:ab4fd954d5cf325a6a16881d57ce3b500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba917ac28ddea33ae9ed181b3ea04f1f" id="r_aba917ac28ddea33ae9ed181b3ea04f1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#aba917ac28ddea33ae9ed181b3ea04f1f">spp_idle_build_packet</a> (space_packet_t *space_packet)</td></tr>
 <tr class="memdesc:aba917ac28ddea33ae9ed181b3ea04f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a standard CCSDS IDLE packet.  <br /></td></tr>
 <tr class="separator:aba917ac28ddea33ae9ed181b3ea04f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +184,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a7ed3a7b932f51f528976f8d930a080e4" id="r_a7ed3a7b932f51f528976f8d930a080e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a7ed3a7b932f51f528976f8d930a080e4">spp_get_secondary_header_data</a> (const space_packet_t *ptr_packet, uint8_t *sec_header, uint16_t sec_header_len)</td></tr>
 <tr class="memdesc:a7ed3a7b932f51f528976f8d930a080e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts secondary header data from a packet.  <br /></td></tr>
 <tr class="separator:a7ed3a7b932f51f528976f8d930a080e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ed24cf9b8922ee60a65709c0cc9776" id="r_a87ed24cf9b8922ee60a65709c0cc9776"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#a87ed24cf9b8922ee60a65709c0cc9776">spp_tc_build_packet_w_sec_hdr</a> (space_packet_t *space_packet, const uint8_t seq_flag, const uint8_t *sec_header_data, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="separator:a87ed24cf9b8922ee60a65709c0cc9776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbdbb254168180f19c0be87b1a534f4" id="r_acdbdbb254168180f19c0be87b1a534f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8h.html#acdbdbb254168180f19c0be87b1a534f4">spp_tm_build_packet_w_sec_hdr</a> (space_packet_t *space_packet, const uint8_t seq_flag, const uint8_t *sec_header_data, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="separator:acdbdbb254168180f19c0be87b1a534f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Space Packet Protocol (SPP) core definitions. </p>
@@ -548,8 +552,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adad5c55eb3019e02567ffad0b74242a0" name="adad5c55eb3019e02567ffad0b74242a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adad5c55eb3019e02567ffad0b74242a0">&#9670;&#160;</a></span>spp_tc_build_packet()</h2>
+<a id="add2288f7d5dc29738e7030a9ec714ce3" name="add2288f7d5dc29738e7030a9ec714ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add2288f7d5dc29738e7030a9ec714ce3">&#9670;&#160;</a></span>spp_tc_build_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,19 +568,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>sec_header</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>sec_header_len</em>, </td>
+          <td class="paramname"><em>seq_flag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -605,13 +597,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a Telecommand (TC) packet. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">space_packet</td><td>Destination packet structure. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>Sequence group flags. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sec_header</td><td>Secondary header presence flag. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sec_header_len</td><td>Length of the secondary header in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seq_flag</td><td>Sequence group flags. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Pointer to user payload data. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_len</td><td>Length of the user payload. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">ptr_apid_context</td><td>Pointer to the APID context to update counters. </td></tr>
@@ -619,13 +608,69 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>SPP_ERROR_NONE on success, or specific error code. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
-<a id="a5bc39733b3e471127f527d1a30dd66e0" name="a5bc39733b3e471127f527d1a30dd66e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bc39733b3e471127f527d1a30dd66e0">&#9670;&#160;</a></span>spp_tm_build_packet()</h2>
+<a id="a87ed24cf9b8922ee60a65709c0cc9776" name="a87ed24cf9b8922ee60a65709c0cc9776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ed24cf9b8922ee60a65709c0cc9776">&#9670;&#160;</a></span>spp_tc_build_packet_w_sec_hdr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_tc_build_packet_w_sec_hdr </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t *&#160;</td>
+          <td class="paramname"><em>space_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>seq_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>sec_header_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ptr_apid_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4fd954d5cf325a6a16881d57ce3b500" name="ab4fd954d5cf325a6a16881d57ce3b500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4fd954d5cf325a6a16881d57ce3b500">&#9670;&#160;</a></span>spp_tm_build_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,19 +685,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>sec_header</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>sec_header_len</em>, </td>
+          <td class="paramname"><em>seq_flag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -681,6 +714,64 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a Telemetry (TM) packet. </p>
+
+</div>
+</div>
+<a id="acdbdbb254168180f19c0be87b1a534f4" name="acdbdbb254168180f19c0be87b1a534f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdbdbb254168180f19c0be87b1a534f4">&#9670;&#160;</a></span>spp_tm_build_packet_w_sec_hdr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_tm_build_packet_w_sec_hdr </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t *&#160;</td>
+          <td class="paramname"><em>space_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>seq_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>sec_header_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ptr_apid_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

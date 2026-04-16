@@ -107,15 +107,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a6307104f75be974e003914c60137f305" id="r_a6307104f75be974e003914c60137f305"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#a6307104f75be974e003914c60137f305">spp_validate_counters</a> (<a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *spp_apid_context)</td></tr>
 <tr class="memdesc:a6307104f75be974e003914c60137f305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates and wraps sequence counters to 14 bits (max 16383).  <br /></td></tr>
 <tr class="separator:a6307104f75be974e003914c60137f305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada7de47dd1b66397f3d8f0393e018a74" id="r_ada7de47dd1b66397f3d8f0393e018a74"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#ada7de47dd1b66397f3d8f0393e018a74">spp_build_packet</a> (space_packet_t *space_packet, const uint8_t type, const uint8_t flag, const uint8_t sec_header, const uint16_t sec_header_len, const uint16_t apid, const uint16_t sequence_count, const uint8_t *data, uint16_t data_len)</td></tr>
-<tr class="memdesc:ada7de47dd1b66397f3d8f0393e018a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal generic packet builder.  <br /></td></tr>
-<tr class="separator:ada7de47dd1b66397f3d8f0393e018a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae782a7c5a19903f07f6c3ae4cb5b29e8" id="r_ae782a7c5a19903f07f6c3ae4cb5b29e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#ae782a7c5a19903f07f6c3ae4cb5b29e8">spp_tc_build_packet</a> (space_packet_t *space_packet, const uint8_t flag, const uint8_t sec_header, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
-<tr class="memdesc:ae782a7c5a19903f07f6c3ae4cb5b29e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telecommand (TC) packet.  <br /></td></tr>
-<tr class="separator:ae782a7c5a19903f07f6c3ae4cb5b29e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73fa60a66d552d5252986de69e6d0481" id="r_a73fa60a66d552d5252986de69e6d0481"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#a73fa60a66d552d5252986de69e6d0481">spp_tm_build_packet</a> (space_packet_t *space_packet, const uint8_t flag, const uint8_t sec_header, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
-<tr class="memdesc:a73fa60a66d552d5252986de69e6d0481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telemetry (TM) packet.  <br /></td></tr>
-<tr class="separator:a73fa60a66d552d5252986de69e6d0481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7051d5864cfac98c02568acf9bf026" id="r_a2c7051d5864cfac98c02568acf9bf026"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#a2c7051d5864cfac98c02568acf9bf026">spp_build_packet</a> (space_packet_t *space_packet, const uint8_t p_type, const uint8_t sec_header_flag, const uint16_t apid, const uint8_t seq_flag, const uint16_t sequence_count, const uint16_t sec_header_len, const uint8_t *data, uint16_t data_len)</td></tr>
+<tr class="memdesc:a2c7051d5864cfac98c02568acf9bf026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal generic packet builder.  <br /></td></tr>
+<tr class="separator:a2c7051d5864cfac98c02568acf9bf026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f3bedfedf88364f42ef6dee9ac73de" id="r_a64f3bedfedf88364f42ef6dee9ac73de"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#a64f3bedfedf88364f42ef6dee9ac73de">_spp_build_packet_w_sec_hdr</a> (space_packet_t *space_packet, const uint8_t p_type, const uint8_t sec_header_flag, const uint16_t apid, const uint8_t seq_flag, const uint16_t seq_count, const uint8_t *sec_hdr_data, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len)</td></tr>
+<tr class="separator:a64f3bedfedf88364f42ef6dee9ac73de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf36f54eaac9b7d320937d6381e2db9b" id="r_adf36f54eaac9b7d320937d6381e2db9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#adf36f54eaac9b7d320937d6381e2db9b">spp_tc_build_packet</a> (space_packet_t *space_packet, const uint8_t seq_flag, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="memdesc:adf36f54eaac9b7d320937d6381e2db9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telecommand (TC) packet.  <br /></td></tr>
+<tr class="separator:adf36f54eaac9b7d320937d6381e2db9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ed24cf9b8922ee60a65709c0cc9776" id="r_a87ed24cf9b8922ee60a65709c0cc9776"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#a87ed24cf9b8922ee60a65709c0cc9776">spp_tc_build_packet_w_sec_hdr</a> (space_packet_t *space_packet, const uint8_t seq_flag, const uint8_t *sec_header_data, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="separator:a87ed24cf9b8922ee60a65709c0cc9776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227114f2b425c953a8344f3de4562a88" id="r_a227114f2b425c953a8344f3de4562a88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#a227114f2b425c953a8344f3de4562a88">spp_tm_build_packet</a> (space_packet_t *space_packet, const uint8_t seq_flag, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="memdesc:a227114f2b425c953a8344f3de4562a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Telemetry (TM) packet.  <br /></td></tr>
+<tr class="separator:a227114f2b425c953a8344f3de4562a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbdbb254168180f19c0be87b1a534f4" id="r_acdbdbb254168180f19c0be87b1a534f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#acdbdbb254168180f19c0be87b1a534f4">spp_tm_build_packet_w_sec_hdr</a> (space_packet_t *space_packet, const uint8_t seq_flag, const uint8_t *sec_header_data, const uint16_t sec_header_len, const uint8_t *data, const uint16_t data_len, <a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *ptr_apid_context)</td></tr>
+<tr class="separator:acdbdbb254168180f19c0be87b1a534f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba917ac28ddea33ae9ed181b3ea04f1f" id="r_aba917ac28ddea33ae9ed181b3ea04f1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spp_8c.html#aba917ac28ddea33ae9ed181b3ea04f1f">spp_idle_build_packet</a> (space_packet_t *space_packet)</td></tr>
 <tr class="memdesc:aba917ac28ddea33ae9ed181b3ea04f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a standard CCSDS IDLE packet.  <br /></td></tr>
 <tr class="separator:aba917ac28ddea33ae9ed181b3ea04f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,8 +153,92 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2026-04-08 @license GNU General Public License </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 kevin Leon @contact <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'leo'+'n.'+'mor'+'al'+'es@'+'gm'+'ail'+'.c'+'om'; return false;">kevin<span class="obfuscator">.nosp@m.</span>leon<span class="obfuscator">.nosp@m.</span>.mora<span class="obfuscator">.nosp@m.</span>les@<span class="obfuscator">.nosp@m.</span>gmail<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ada7de47dd1b66397f3d8f0393e018a74" name="ada7de47dd1b66397f3d8f0393e018a74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada7de47dd1b66397f3d8f0393e018a74">&#9670;&#160;</a></span>spp_build_packet()</h2>
+<a id="a64f3bedfedf88364f42ef6dee9ac73de" name="a64f3bedfedf88364f42ef6dee9ac73de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f3bedfedf88364f42ef6dee9ac73de">&#9670;&#160;</a></span>_spp_build_packet_w_sec_hdr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int _spp_build_packet_w_sec_hdr </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t *&#160;</td>
+          <td class="paramname"><em>space_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>p_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>sec_header_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>apid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>seq_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>seq_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>sec_hdr_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>data_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c7051d5864cfac98c02568acf9bf026" name="a2c7051d5864cfac98c02568acf9bf026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7051d5864cfac98c02568acf9bf026">&#9670;&#160;</a></span>spp_build_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,25 +256,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
+          <td class="paramname"><em>p_type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>sec_header</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint16_t&#160;</td>
-          <td class="paramname"><em>sec_header_len</em>, </td>
+          <td class="paramname"><em>sec_header_flag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -195,8 +273,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>seq_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const uint16_t&#160;</td>
           <td class="paramname"><em>sequence_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -437,8 +527,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae782a7c5a19903f07f6c3ae4cb5b29e8" name="ae782a7c5a19903f07f6c3ae4cb5b29e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae782a7c5a19903f07f6c3ae4cb5b29e8">&#9670;&#160;</a></span>spp_tc_build_packet()</h2>
+<a id="adf36f54eaac9b7d320937d6381e2db9b" name="adf36f54eaac9b7d320937d6381e2db9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf36f54eaac9b7d320937d6381e2db9b">&#9670;&#160;</a></span>spp_tc_build_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -453,19 +543,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>sec_header</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>sec_header_len</em>, </td>
+          <td class="paramname"><em>seq_flag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -494,13 +572,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a Telecommand (TC) packet. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">space_packet</td><td>Destination packet structure. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>Sequence group flags. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sec_header</td><td>Secondary header presence flag. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sec_header_len</td><td>Length of the secondary header in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seq_flag</td><td>Sequence group flags. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Pointer to user payload data. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_len</td><td>Length of the user payload. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">ptr_apid_context</td><td>Pointer to the APID context to update counters. </td></tr>
@@ -508,19 +583,17 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>SPP_ERROR_NONE on success, or specific error code. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
-<a id="a73fa60a66d552d5252986de69e6d0481" name="a73fa60a66d552d5252986de69e6d0481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73fa60a66d552d5252986de69e6d0481">&#9670;&#160;</a></span>spp_tm_build_packet()</h2>
+<a id="a87ed24cf9b8922ee60a65709c0cc9776" name="a87ed24cf9b8922ee60a65709c0cc9776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ed24cf9b8922ee60a65709c0cc9776">&#9670;&#160;</a></span>spp_tc_build_packet_w_sec_hdr()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int spp_tm_build_packet </td>
+          <td class="memname">int spp_tc_build_packet_w_sec_hdr </td>
           <td>(</td>
           <td class="paramtype">space_packet_t *&#160;</td>
           <td class="paramname"><em>space_packet</em>, </td>
@@ -529,13 +602,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
+          <td class="paramname"><em>seq_flag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>sec_header</em>, </td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>sec_header_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -569,7 +642,111 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a227114f2b425c953a8344f3de4562a88" name="a227114f2b425c953a8344f3de4562a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227114f2b425c953a8344f3de4562a88">&#9670;&#160;</a></span>spp_tm_build_packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_tm_build_packet </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t *&#160;</td>
+          <td class="paramname"><em>space_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>seq_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ptr_apid_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Constructs a Telemetry (TM) packet. </p>
+
+</div>
+</div>
+<a id="acdbdbb254168180f19c0be87b1a534f4" name="acdbdbb254168180f19c0be87b1a534f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdbdbb254168180f19c0be87b1a534f4">&#9670;&#160;</a></span>spp_tm_build_packet_w_sec_hdr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spp_tm_build_packet_w_sec_hdr </td>
+          <td>(</td>
+          <td class="paramtype">space_packet_t *&#160;</td>
+          <td class="paramname"><em>space_packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>seq_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>sec_header_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>sec_header_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspp__apid__context__t.html">spp_apid_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ptr_apid_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
