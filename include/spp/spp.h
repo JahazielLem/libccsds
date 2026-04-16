@@ -94,26 +94,22 @@ typedef struct {
 
 /**
  * @brief Constructs a Telecommand (TC) packet.
- * * @param[out] space_packet Destination packet structure.
- * @param[in] flag Sequence group flags.
- * @param[in] sec_header Secondary header presence flag.
- * @param[in] sec_header_len Length of the secondary header in bytes.
+ * @param[out] space_packet Destination packet structure.
+ * @param[in] seq_flag Sequence group flags.
  * @param[in] data Pointer to user payload data.
  * @param[in] data_len Length of the user payload.
  * @param[in,out] ptr_apid_context Pointer to the APID context to update
  * counters.
  * @return SPP_ERROR_NONE on success, or specific error code.
  */
-int spp_tc_build_packet(space_packet_t *space_packet, uint8_t flag,
-                        uint8_t sec_header, uint16_t sec_header_len,
+int spp_tc_build_packet(space_packet_t *space_packet, uint8_t seq_flag,
                         const uint8_t *data, uint16_t data_len,
                         spp_apid_context_t *ptr_apid_context);
 
 /**
  * @brief Constructs a Telemetry (TM) packet.
  */
-int spp_tm_build_packet(space_packet_t *space_packet, uint8_t flag,
-                        uint8_t sec_header, uint16_t sec_header_len,
+int spp_tm_build_packet(space_packet_t *space_packet, uint8_t seq_flag,
                         const uint8_t *data, uint16_t data_len,
                         spp_apid_context_t *ptr_apid_context);
 
@@ -156,4 +152,17 @@ uint16_t spp_get_apid(const space_packet_t *ptr_packet);
 int spp_get_secondary_header_data(const space_packet_t *ptr_packet,
                                   uint8_t *sec_header, uint16_t sec_header_len);
 
+int spp_tc_build_packet_w_sec_hdr(space_packet_t *space_packet,
+                                  const uint8_t seq_flag,
+                                  const uint8_t *sec_header_data,
+                                  const uint16_t sec_header_len,
+                                  const uint8_t *data, const uint16_t data_len,
+                                  spp_apid_context_t *ptr_apid_context);
+
+int spp_tm_build_packet_w_sec_hdr(space_packet_t *space_packet,
+                                  const uint8_t seq_flag,
+                                  const uint8_t *sec_header_data,
+                                  const uint16_t sec_header_len,
+                                  const uint8_t *data, const uint16_t data_len,
+                                  spp_apid_context_t *ptr_apid_context);
 #endif // LIBCCSDS_SPP_H

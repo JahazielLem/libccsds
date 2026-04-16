@@ -25,22 +25,18 @@ static const uint8_t buffer[12] = {0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20,
                                    0x57, 0x6f, 0x72, 0x6c, 0x64, 0x00};
 
 int test_spp_tm_build_packet(void) {
-  const uint16_t apid = 1;
   space_packet_t packet;
 
   spp_apid_context_t counter = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer,
+  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
                              sizeof(buffer), &counter);
 }
 
 int test_spp_tc_build_packet(void) {
-  const uint16_t apid = 1;
   space_packet_t packet;
 
   spp_apid_context_t counter = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer,
+  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
                              sizeof(buffer), &counter);
 }
 

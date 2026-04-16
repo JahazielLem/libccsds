@@ -26,75 +26,66 @@ static const uint8_t buffer[12] = {0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20,
                                    0x57, 0x6f, 0x72, 0x6c, 0x64, 0x00};
 
 int test_build_tm_null_data(void) {
-  const uint16_t apid = 1;
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, NULL, 12, &context);
+  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, NULL,
+                             sizeof(buffer), &context);
 }
 
 int test_build_tc_null_data(void) {
-  const uint16_t apid = 1;
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, NULL, 12, &context);
+  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, NULL,
+                             sizeof(buffer), &context);
 }
 
 int test_build_tm_overflow_data_len(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer,
+  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
                              SPP_MAX_PAYLOAD_CHUNK + 2, &context);
 }
 
 int test_build_tc_overflow_data_len(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer,
+  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
                              SPP_MAX_PAYLOAD_CHUNK + 2, &context);
 }
 
 int test_build_tm_underflow_data_len(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 0,
+  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer, 0,
                              &context);
 }
 
 int test_build_tc_underflow_data_len(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 0,
+  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer, 0,
                              &context);
 }
 
 int test_build_tm_idle_apid(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = SPP_APID_IDLE};
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12,
-                             &context);
+  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                             sizeof(buffer), &context);
 }
 
 int test_build_tc_idle_apid(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = SPP_APID_IDLE};
-  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12,
-                             &context);
+  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                             sizeof(buffer), &context);
 }
 
 int test_packet_counter(void) {
   spp_apid_context_t context = {.tc = 16390, .tm = 16390, .apid = 1};
   space_packet_t packet;
-  const int ret =
-      spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                          SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, &context);
+  const int ret = spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
+                                      buffer, sizeof(buffer), &context);
 
   ASSERT_ERROR(ret == SPP_ERROR_NONE,
                "test_packet_counter.spp_tc_build_packet error.");
@@ -107,9 +98,8 @@ int test_counter_wrap_exact(void) {
   spp_apid_context_t context = {.tc = 16383, .tm = 0, .apid = 1};
   space_packet_t packet;
 
-  const int ret =
-      spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                          SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, &context);
+  const int ret = spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
+                                      buffer, sizeof(buffer), &context);
 
   ASSERT_ERROR(ret == SPP_ERROR_NONE, "wrap failed");
   ASSERT_ERROR(context.tc == 1, "wrap incorrect");
@@ -119,32 +109,30 @@ int test_counter_wrap_exact(void) {
 
 int test_null_counter(void) {
   space_packet_t packet;
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, NULL);
+  return spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                             sizeof(buffer), NULL);
 }
 
 int test_null_packet_ptr(void) {
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
-  return spp_tm_build_packet(NULL, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12,
-                             &context);
+  return spp_tc_build_packet(NULL, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                             sizeof(buffer), &context);
 }
 
 int test_apid_out_of_range(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 0xFFFF};
 
-  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                             SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12,
-                             &context);
+  return spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                             sizeof(buffer), &context);
 }
 
 int test_length_field_correct(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
 
-  spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                      SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, &context);
+  spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                      sizeof(buffer), &context);
 
   const uint16_t len = HOST_TO_BE16(packet.header.length);
   ASSERT_ERROR(len == 11, "length incorrect");
@@ -155,8 +143,8 @@ int test_endianness(void) {
   space_packet_t packet;
   spp_apid_context_t context = {.tc = 0, .tm = 0, .apid = 1};
 
-  spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                      SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, &context);
+  spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED, buffer,
+                      sizeof(buffer), &context);
 
   const uint16_t raw = packet.header.identification;
   ASSERT_ERROR(raw != 1, "endianness incorrect");
@@ -168,9 +156,8 @@ int test_sequence_wrap(void) {
   spp_apid_context_t context = {.tc = 16383, .tm = 0, .apid = 1};
   space_packet_t packet;
 
-  const int ret =
-      spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                          SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, &context);
+  const int ret = spp_tc_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
+                                      buffer, sizeof(buffer), &context);
 
   const uint16_t seq = spp_get_sequence_count(&packet);
 

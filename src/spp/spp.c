@@ -33,10 +33,11 @@ static void spp_validate_counters(spp_apid_context_t *spp_apid_context) {
  * * Handles bit-shifting and Big-Endian conversion for the CCSDS Primary
  * Header.
  */
-static int spp_build_packet(space_packet_t *space_packet, const uint8_t type,
-                            const uint8_t flag, const uint8_t sec_header,
-                            const uint16_t sec_header_len, const uint16_t apid,
-                            const uint16_t sequence_count, const uint8_t *data,
+static int spp_build_packet(space_packet_t *space_packet, const uint8_t p_type,
+                            const uint8_t sec_header_flag, const uint16_t apid,
+                            const uint8_t seq_flag,
+                            const uint16_t sequence_count,
+                            const uint16_t sec_header_len, const uint8_t *data,
                             uint16_t data_len) {
   if (data_len == 0) {
     return SPP_ERROR_PAYLOAD_LEN;
@@ -44,7 +45,7 @@ static int spp_build_packet(space_packet_t *space_packet, const uint8_t type,
   if (apid > 0x07FF) {
     return SPP_ERROR_INVALID_APID;
   }
-  if (apid == SPP_APID_IDLE && type != SPP_PTYPE_TM) {
+  if (apid == SPP_APID_IDLE && p_type != SPP_PTYPE_TM) {
     return SPP_ERROR_INVALID_APID;
   }
   if (data_len > 0 && data == NULL) {
@@ -53,10 +54,10 @@ static int spp_build_packet(space_packet_t *space_packet, const uint8_t type,
   if (data_len > sizeof(space_packet->data)) {
     return SPP_ERROR_PAYLOAD_LEN;
   }
-  if ((data_len + sec_header_len) > (SPP_MAX_PAYLOAD_CHUNK + 1)) {
+  if (data_len > (SPP_MAX_PAYLOAD_CHUNK + 1)) {
     return SPP_ERROR_PAYLOAD_LEN;
   }
-  if (sec_header == SPP_SECHEAD_FLAG_PRESENT && sec_header_len == 0) {
+  if (sec_header_flag == SPP_SECHEAD_FLAG_PRESENT && sec_header_len == 0) {
     return SPP_ERROR_MALFORMED_SEC_HEADER;
   }
 
@@ -64,25 +65,46 @@ static int spp_build_packet(space_packet_t *space_packet, const uint8_t type,
 
   uint16_t packet_id = 0;
   packet_id |= (CCSDS_SPP_VERSION & 0x07) << 13;
-  packet_id |= (type & 0x01) << 12;
-  packet_id |= (sec_header & 0x01) << 11;
+  packet_id |= (p_type & 0x01) << 12;
+  packet_id |= (sec_header_flag & 0x01) << 11;
   packet_id |= apid;
 
   uint16_t seq_ctrl = 0;
-  seq_ctrl |= (flag & 0x03) << 14;
+  seq_ctrl |= (seq_flag & 0x03) << 14;
   seq_ctrl |= (sequence_count & 0x3FFF);
 
   space_packet->header.identification = HOST_TO_BE16(packet_id);
   space_packet->header.sequence = HOST_TO_BE16(seq_ctrl);
-  space_packet->header.length = HOST_TO_BE16(data_len + sec_header_len - 1);
+  space_packet->header.length = HOST_TO_BE16(data_len - 1);
 
   memcpy(space_packet->data, data, data_len);
 
   return SPP_ERROR_NONE;
 }
 
-int spp_tc_build_packet(space_packet_t *space_packet, const uint8_t flag,
-                        const uint8_t sec_header, const uint16_t sec_header_len,
+static int
+_spp_build_packet_w_sec_hdr(space_packet_t *space_packet, const uint8_t p_type,
+                            const uint8_t sec_header_flag, const uint16_t apid,
+                            const uint8_t seq_flag, const uint16_t seq_count,
+                            const uint8_t *sec_hdr_data,
+                            const uint16_t sec_header_len, const uint8_t *data,
+                            const uint16_t data_len) {
+  if (data_len == 0) {
+    return SPP_ERROR_SEC_HEADER_DATA_LENGTH;
+  }
+
+  const int packet_data_len = sec_header_len + data_len;
+  uint8_t packet_data[packet_data_len];
+  memset(packet_data, 0, packet_data_len);
+
+  memcpy(packet_data, sec_hdr_data, sec_header_len);
+  memcpy(packet_data + sec_header_len, data, data_len);
+  return spp_build_packet(space_packet, p_type, sec_header_flag, apid, seq_flag,
+                          seq_count, sec_header_len, packet_data,
+                          packet_data_len);
+}
+
+int spp_tc_build_packet(space_packet_t *space_packet, const uint8_t seq_flag,
                         const uint8_t *data, const uint16_t data_len,
                         spp_apid_context_t *ptr_apid_context) {
   if (space_packet == NULL) {
@@ -92,17 +114,43 @@ int spp_tc_build_packet(space_packet_t *space_packet, const uint8_t flag,
     return SPP_ERROR_NULL_COUNTER;
   }
   spp_validate_counters(ptr_apid_context);
-  const int ret = spp_build_packet(space_packet, SPP_PTYPE_TC, flag, sec_header,
-                                   sec_header_len, ptr_apid_context->apid,
-                                   ptr_apid_context->tc, data, data_len);
+  const int ret =
+      spp_build_packet(space_packet, SPP_PTYPE_TC, SPP_SECHEAD_FLAG_NOPRESENT,
+                       ptr_apid_context->apid, seq_flag, ptr_apid_context->tc,
+                       0, data, data_len);
   if (ret == SPP_ERROR_NONE) {
     ptr_apid_context->tc++;
   }
   return ret;
 }
 
-int spp_tm_build_packet(space_packet_t *space_packet, const uint8_t flag,
-                        const uint8_t sec_header, const uint16_t sec_header_len,
+int spp_tc_build_packet_w_sec_hdr(space_packet_t *space_packet,
+                                  const uint8_t seq_flag,
+                                  const uint8_t *sec_header_data,
+                                  const uint16_t sec_header_len,
+                                  const uint8_t *data, const uint16_t data_len,
+                                  spp_apid_context_t *ptr_apid_context) {
+  if (space_packet == NULL) {
+    return SPP_ERROR_NULL_SPACE_PACKET;
+  }
+  if (ptr_apid_context == NULL) {
+    return SPP_ERROR_NULL_COUNTER;
+  }
+  if (sec_header_data == NULL) {
+    return SPP_ERROR_NULL_SEC_HDR_DATA;
+  }
+  spp_validate_counters(ptr_apid_context);
+  const int ret = _spp_build_packet_w_sec_hdr(
+      space_packet, SPP_PTYPE_TC, SPP_SECHEAD_FLAG_PRESENT,
+      ptr_apid_context->apid, seq_flag, ptr_apid_context->tc, sec_header_data,
+      sec_header_len, data, data_len);
+  if (ret == SPP_ERROR_NONE) {
+    ptr_apid_context->tc++;
+  }
+  return ret;
+}
+
+int spp_tm_build_packet(space_packet_t *space_packet, const uint8_t seq_flag,
                         const uint8_t *data, const uint16_t data_len,
                         spp_apid_context_t *ptr_apid_context) {
   if (space_packet == NULL) {
@@ -112,21 +160,47 @@ int spp_tm_build_packet(space_packet_t *space_packet, const uint8_t flag,
     return SPP_ERROR_NULL_COUNTER;
   }
   spp_validate_counters(ptr_apid_context);
-  const int ret = spp_build_packet(space_packet, SPP_PTYPE_TM, flag, sec_header,
-                                   sec_header_len, ptr_apid_context->apid,
-                                   ptr_apid_context->tm, data, data_len);
+  const int ret =
+      spp_build_packet(space_packet, SPP_PTYPE_TM, SPP_SECHEAD_FLAG_NOPRESENT,
+                       ptr_apid_context->apid, seq_flag, ptr_apid_context->tm,
+                       0, data, data_len);
   if (ret == SPP_ERROR_NONE) {
     ptr_apid_context->tm++;
   }
   return ret;
 }
 
+int spp_tm_build_packet_w_sec_hdr(space_packet_t *space_packet,
+                                  const uint8_t seq_flag,
+                                  const uint8_t *sec_header_data,
+                                  const uint16_t sec_header_len,
+                                  const uint8_t *data, const uint16_t data_len,
+                                  spp_apid_context_t *ptr_apid_context) {
+  if (space_packet == NULL) {
+    return SPP_ERROR_NULL_SPACE_PACKET;
+  }
+  if (ptr_apid_context == NULL) {
+    return SPP_ERROR_NULL_COUNTER;
+  }
+  if (sec_header_data == NULL) {
+    return SPP_ERROR_NULL_SEC_HDR_DATA;
+  }
+  spp_validate_counters(ptr_apid_context);
+  const int ret = _spp_build_packet_w_sec_hdr(
+      space_packet, SPP_PTYPE_TM, SPP_SECHEAD_FLAG_PRESENT,
+      ptr_apid_context->apid, seq_flag, ptr_apid_context->tm, sec_header_data,
+      sec_header_len, data, data_len);
+  if (ret == SPP_ERROR_NONE) {
+    ptr_apid_context->tc++;
+  }
+  return ret;
+}
+
 int spp_idle_build_packet(space_packet_t *space_packet) {
   const uint8_t idle_buffer[SPP_IDLE_BUFFER_LEN] = {SPP_IDLE_BUFFER_DATA};
-  return spp_build_packet(space_packet, SPP_PTYPE_TM,
-                          SPP_GROUP_FLAG_UNSEGMENTED,
-                          SPP_SECHEAD_FLAG_NOPRESENT, 0, SPP_APID_IDLE, 0,
-                          idle_buffer, SPP_IDLE_BUFFER_LEN);
+  return spp_build_packet(
+      space_packet, SPP_PTYPE_TM, SPP_SECHEAD_FLAG_NOPRESENT, SPP_APID_IDLE,
+      SPP_GROUP_FLAG_UNSEGMENTED, 0, 0, idle_buffer, SPP_IDLE_BUFFER_LEN);
 }
 
 int spp_unpack_packet(space_packet_t *space_packet, const uint8_t *buffer,

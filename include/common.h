@@ -37,4 +37,6 @@
 #define SPP_ERROR_NULL_COUNTER -8      /**< @brief Packet counter NULL */
 #define SPP_ERROR_NULL_SPACE_PACKET -9 /**< @brief Space Packet NULL */
 #define SPP_ERROR_APID_OUT_OF_RANGE -10 /**< @brief APID Out of Range */
-#endif                                  // LIBCCSDS_COMMON_H
+#define SPP_ERROR_NULL_SEC_HDR_DATA -11
+#define SPP_ERROR_SEC_HEADER_DATA_LENGTH -12
+#endif // LIBCCSDS_COMMON_H

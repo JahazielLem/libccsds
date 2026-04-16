@@ -20,9 +20,8 @@ int main(void) {
                               0x57, 0x6f, 0x72, 0x6c, 0x64, 0x00};
   space_packet_t packet;
   spp_apid_context_t counter = {.tc = 0, .tm = 0, .apid = 1};
-  const int ret =
-      spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
-                          SPP_SECHEAD_FLAG_NOPRESENT, 0, buffer, 12, &counter);
+  const int ret = spp_tm_build_packet(&packet, SPP_GROUP_FLAG_UNSEGMENTED,
+                                      buffer, 12, &counter);
   if (ret != SPP_ERROR_NONE) {
     printf("[ERROR] SPP: %d\n", ret);
     return ret;
